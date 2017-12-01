@@ -8,6 +8,7 @@ from pymongo import MongoClient
 说明: 将存储在mongo中的json文档转换成二维的excel文档, 主要用到了json_normalize函数
 '''
 
+
 def normalize_doc(doc):
     if doc['data'] == "":
         normalized = pd.DataFrame([[0, 0, 0]], columns=["_id", "userId", "error_code"])
