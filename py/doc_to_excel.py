@@ -25,7 +25,7 @@ if __name__ == "__main__":
     client = MongoClient("mongodb://dev:123456@192.168.1.100:8078/bfm")
     db = client['bfm']
     collection = db['lending']
-    all_doc = collection.find()
+    all_doc = collection.find().limit(300)
     one_doc = collection.find_one({"userId": 7200})
 
     result = normalize_doc(one_doc)
